@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="happy birtday.css" />
+    <title>Happy birthday</title>
+  </head>
+  <body>
+    
+    <!-- Canvas animasi -->
+    <canvas id="c"></canvas>
+
+    <!-- Audio dengan loop -->
+    <audio id="bdayAudio" src="Audio/BdayBaloon.mp3" loop></audio>
+    <!-- Ganti 'lagu.mp3' dengan file musik kamu -->
+
+    <!-- Tombol Play -->
+    <button id="playBtn" style="
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 8px;
+      background: white;          /* warna putih */
+      color: black;               /* teks hitam */
+      border: 1px solid #ccc;     /* border tipis */
+      cursor: pointer;
+      z-index: 1000;
+    ">
+      🎵
+    </button>
+
+    <!-- Widget BMC -->
+    <script
+      data-name="BMC-Widget"
+      data-cfasync="false"
+      data-id="er.robin"
+      data-description="Support me on Buy me a coffee!"
+      data-message=""
+      data-color="#BD5FFF"
+      data-position="Right"
+      data-x_margin="18"
+      data-y_margin="18"></script>
+
+    <!-- Script animasi fireworks -->
+    <script src="happy birtday.js"></script>
+
+    <!-- Script kontrol audio -->
+    <script>
+      const audio = document.getElementById("bdayAudio");
+      const playBtn = document.getElementById("playBtn");
+
+      playBtn.addEventListener("click", function () {
+        audio.play()
+          .then(() => {
+            playBtn.style.display = "none"; // tombol hilang setelah musik dimainkan
+          })
+          .catch(err => {
+            console.log("Tidak bisa memutar audio:", err);
+          });
+      });
+    </script>
+  </body>
+</html>

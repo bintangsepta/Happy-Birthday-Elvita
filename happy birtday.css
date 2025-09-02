@@ -1,0 +1,59 @@
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Teks footer / credit */
+p {
+  margin: 0;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;                /* biar ada jarak kiri/kanan */
+  max-width: 600px;          /* supaya tidak terlalu melebar di layar besar */
+  font: 16px Verdana, sans-serif;
+  color: #eee;
+  text-align: center;
+  text-shadow: 0 0 2px white;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+p a {
+  text-decoration: none;
+  color: #aaa;
+}
+
+span {
+  font-size: 11px;
+}
+
+p > a:first-of-type {
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* --- Responsif untuk HP kecil --- */
+@media (max-width: 768px) {
+  p {
+    font-size: 14px;      /* sedikit lebih kecil di tablet */
+  }
+  p > a:first-of-type {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  p {
+    font-size: 12px;      /* lebih kecil lagi di HP kecil */
+  }
+  p > a:first-of-type {
+    font-size: 16px;
+  }
+}
